@@ -1,0 +1,161 @@
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/*********************/
+/****** HEADER *******/
+/*********************/
+
+.header {
+  position: sticky;
+  background-color: var(--bg-color) !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 5%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 200;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.8rem;
+}
+
+.linked {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-left: 3.5rem;
+  transition: .3s;
+}
+
+.linked:hover,
+.linked.active {
+  color: var(--main-color);
+}
+
+.linked.off {
+  color: var(--text-color)
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none;
+}
+
+.footer-iconTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.footer-iconTop.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.footer-iconTop.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.footer-iconTop .linkUp .bx {
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  color: var(--main-color);
+  font-size: 4rem;
+  display: block;
+}
+
+@media (max-width: 875px) {
+
+  .logo {
+    display: none;
+  }
+
+}
+
+@media (max-width: 785px) {
+  .menu-toggle {
+    display: block;
+    /* Aparece la hamburguesa */
+  }
+
+  .nav-links {
+    display: none;
+    /* Se oculta por defecto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Posicionamiento absoluto para que caiga debajo de la navbar */
+    position: absolute;
+    top: 100%;
+    /* Justo abajo del contenedor padre */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    /* Ocupa el resto de la pantalla visible */
+    background-color: #1a1a1a;
+    gap: 3rem;
+  }
+
+  /* La clase que activa React al hacer clic */
+  .nav-links.on {
+    display: flex !important;
+  }
+
+  .footer-iconTop .linkUp .bx {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .linked {
+    margin: 0;
+  }  
+
+}
