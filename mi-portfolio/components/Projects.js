@@ -27,7 +27,6 @@ export default function Projects() {
   return (
     <section id="projects">
       <h2 className="heading">Mis <span>Proyectos</span></h2>
-      <h3 className="disclaimer">Disclaimer (2026): les falta actualización mobile.</h3>
       {/* Mapeamos la información y mostramos */}
       <div className="projects">
         {projectList.map((project, index) => (
