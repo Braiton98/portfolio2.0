@@ -2,10 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Portfolio",
-  description: "Estudiante de Licenciatura en Sistemas en la UNLa. Portfolio web de proyectos y habilidades.",
-  icons: {
-    icon: "/assets/images/maletin.png",
-  }
+  description: "Estudiante de Licenciatura en Sistemas en la UNLa. Portfolio web de proyectos y habilidades."
 };
 
 export default function RootLayout({ children }) {
